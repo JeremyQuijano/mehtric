@@ -49,7 +49,7 @@ Hello, meh
 
 ## File Structure
 
-- `mehtric_main.py` — main entry point for the language interpreter
+- `mehtric.py` — main entry point for the language interpreter
 - `mehtric_lexer.py` — defines the lexical tokens using SLY
 - `mehtric_parser.py` — defines grammar and parsing rules
 - `mehtric_interpreter.py` — walks the parsed AST and evaluates expressions
