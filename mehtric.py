@@ -12,6 +12,7 @@ from mehtric_lexer import MehtricLexer
 from mehtric_parser import MehtricParser
 from mehtric_interpreter import MehtricInterpreter
 from mehtric_interpreter import language_name as lang_name
+from mehtric_interpreter import ascii_art
 
 ### clear console
 os.system('cls')
@@ -30,14 +31,7 @@ if __name__ == '__main__':
 	parser = MehtricParser()
 
 	### ascii art header
-	print(r"""
-                 _     _    
-                | |   | |     
-  _ __ ___   ___| |__ | |_ _ __ _  ___ 
- | '_ ` _ \ / _ \ '_ \| __| '__| |/ __|
- | | | | | |  __/ | | | |_| |  | | (__ 
- |_| |_| |_|\___|_| |_|\__|_|  |_|\___|
-	   """)
+	ascii_art('program_name')
 	print("Enter code or \"help\" to display the user manual.\n\n\n")
 	
 	### create environment
@@ -67,3 +61,4 @@ if __name__ == '__main__':
 			except Exception as e:
 				print(f"Parsing failed: {e}\n")
 				continue
+			

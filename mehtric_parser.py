@@ -152,7 +152,7 @@ class MehtricParser(Parser):
 			self.handle_error('reserved_keyword_error', p.expr[0], p.lineno)
 			return None
 		else:
-			return p.expr
+			return ('neg', p.expr)
 	
 	@_('"(" expr ")"')
 	def expr(self, p):

@@ -82,6 +82,10 @@ class MehtricInterpreter:
 			else:
 				self.handle_error('undefined_variable', var_name)
 
+		### negatives
+		if node[0] == 'neg':
+			return -self.walkTree(node[1])
+
 		### parse operation type
 		try:
 			left = self.walkTree(node[1]) if len(node) > 1 else None
@@ -220,14 +224,7 @@ class MehtricInterpreter:
 			### clear command
 			case 'clear':
 				os.system('cls')
-				print(r"""
-                 _     _    
-                | |   | |     
-  _ __ ___   ___| |__ | |_ _ __ _  ___ 
- | '_ ` _ \ / _ \ '_ \| __| '__| |/ __|
- | | | | | |  __/ | | | |_| |  | | (__ 
- |_| |_| |_|\___|_| |_|\__|_|  |_|\___|
-	   				""")
+				ascii_art('program_name')
 				print("Enter code or \"help\" to display the user manual.\n\n\n")
 				return None
 			
@@ -246,14 +243,7 @@ class MehtricInterpreter:
 			### meh command
 			case 'meh':
 				print('Have a meh day. ¯\_(ツ)_/¯\n')
-				print(r"""
-                 _     
-                | |    
-  _ __ ___   ___| |__  
- | '_ ` _ \ / _ \ '_ \ 
- | | | | | |  __/ | | |
- |_| |_| |_|\___|_| |_|
-		  """)
+				ascii_art('meh')
 				return None
 			
 			### defualt case error
@@ -317,23 +307,10 @@ class MehtricInterpreter:
 	### help funciton
 	def help_menu(self):
 		### ascii art header
-		print(r"""
-                 _     _ 
-                | |   | |   
-  _ __ ___   ___| |__ | |_ _ __ _  ___ 
- | '_ ` _ \ / _ \ '_ \| __| '__| |/ __|
- | | | | | |  __/ | | | |_| |  | | (__ 
- |_| |_| |_|\___|_| |_|\__|_|  |_|\___|
-  _    _  _____ ______ _____    __  __          _   _ _    _         _      
- | |  | |/ ____|  ____|  __ \  |  \/  |   /\   | \ | | |  | |  /\   | |     
- | |  | | (___ | |__  | |__) | | \  / |  /  \  |  \| | |  | | /  \  | |     
- | |  | |\___ \|  __| |  _  /  | |\/| | / /\ \ | . ` | |  | |/ /\ \ | |     
- | |__| |____) | |____| | \ \  | |  | |/ ____ \| |\  | |__| / ____ \| |____ 
-  \____/|_____/|______|_|  \_\ |_|  |_/_/    \_\_| \_|\____/_/    \_\______|
-    """)
+		ascii_art('user_manual')
 
 		print(f"\n{language_name} User Manual")
-		print("Created by Jeremy Quijano\n")
+		print("Created by Jeremy Quijano and Dalton Davis\n")
 
 		### supported functionality
 		print("Supported Functionality:")
@@ -374,3 +351,42 @@ class MehtricInterpreter:
 		print("\nEnd of User Manual.\n")
 		return None
 	
+def ascii_art(art_type):
+	match art_type:
+		case 'program_name':
+			print(r"""
+                 _     _    
+                | |   | |     
+  _ __ ___   ___| |__ | |_ _ __ _  ___ 
+ | '_ ` _ \ / _ \ '_ \| __| '__| |/ __|
+ | | | | | |  __/ | | | |_| |  | | (__ 
+ |_| |_| |_|\___|_| |_|\__|_|  |_|\___|
+				""")
+		case 'user_manual':
+			print(r"""
+                 _     _    
+                | |   | |     
+  _ __ ___   ___| |__ | |_ _ __ _  ___ 
+ | '_ ` _ \ / _ \ '_ \| __| '__| |/ __|
+ | | | | | |  __/ | | | |_| |  | | (__ 
+ |_| |_| |_|\___|_| |_|\__|_|  |_|\___|
+  _    _  _____ ______ _____    __  __          _   _ _    _         _      
+ | |  | |/ ____|  ____|  __ \  |  \/  |   /\   | \ | | |  | |  /\   | |     
+ | |  | | (___ | |__  | |__) | | \  / |  /  \  |  \| | |  | | /  \  | |     
+ | |  | |\___ \|  __| |  _  /  | |\/| | / /\ \ | . ` | |  | |/ /\ \ | |     
+ | |__| |____) | |____| | \ \  | |  | |/ ____ \| |\  | |__| / ____ \| |____ 
+  \____/|_____/|______|_|  \_\ |_|  |_/_/    \_\_| \_|\____/_/    \_\______|
+			""")
+			return None
+		case 'meh':
+			print(r"""
+                 _ 
+                | |
+  _ __ ___   ___| |__
+ | '_ ` _ \ / _ \ '_ \
+ | | | | | |  __/ | | |
+ |_| |_| |_|\___|_| |_|
+			""")
+			return None
+		case _:
+			return None
