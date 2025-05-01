@@ -53,7 +53,7 @@ Hello, meh
 - `mehtric_lexer.py` — defines the lexical tokens using SLY
 - `mehtric_parser.py` — defines grammar and parsing rules
 - `mehtric_interpreter.py` — walks the parsed AST and evaluates expressions
-- `README_mehtric.md` — project documentation
+- `README.md` — project documentation
 
 ## Roadmap
 
