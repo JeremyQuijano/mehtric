@@ -8,7 +8,7 @@
  |_| |_| |_|\___|_| |_|\__|_|  |_|\___|
 ```
 
-**Mehtric** is a custom interpreted programming language written in Python using the [SLY](https://github.com/dabeaz/sly) (Sly Lexer and Parser) library. It supports variables, arithmetic expressions, strings, comparison operators, and REPL interaction. We followed the tutrial from [GeeksForGeeks](https://www.geeksforgeeks.org/how-to-create-a-programming-language-using-python/) to implement our lexer, parser, interpreter, and main files.
+**Mehtric** is a custom interpreted programming language written in Python using the [SLY](https://github.com/dabeaz/sly) (Sly Lexer and Parser) library. It supports variables, arithmetic expressions, strings, comparison operators, and REPL interaction. I followed the tutrial from [GeeksForGeeks](https://www.geeksforgeeks.org/how-to-create-a-programming-language-using-python/) to implement our lexer, parser, interpreter, and main files.
 
 ## Features
 
