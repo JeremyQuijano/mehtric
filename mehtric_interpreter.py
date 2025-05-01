@@ -236,7 +236,7 @@ class MehtricInterpreter:
 				print(f"\n{language_name} restarting...\n")
 				time.sleep(1)
 				os.system('cls')
-				sys.exit(os.system(f'python3 ./{language_name}_main.py'))
+				sys.exit(os.system(f'python3 ./{language_name}.py'))
 
 			### help command
 			case 'help':
