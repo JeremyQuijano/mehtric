@@ -333,7 +333,7 @@ class MehtricInterpreter:
     """)
 
 		print(f"\n{language_name} User Manual")
-		print("Created by Jeremy Quijano and Dalton Davis\n")
+		print("Created by Jeremy Quijano\n")
 
 		### supported functionality
 		print("Supported Functionality:")
