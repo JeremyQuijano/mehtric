@@ -61,7 +61,3 @@ Hello, meh
 - [ ] Add list and dictionary types
 - [ ] Implement control flow (`if`, `while`, etc.)
 - [ ] Add import/module system
-
-## License
-
-MIT License.
