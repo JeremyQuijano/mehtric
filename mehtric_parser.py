@@ -156,7 +156,6 @@ class MehtricParser(Parser):
 	
 	@_('"(" expr ")"')
 	def expr(self, p):
-		print(p.expr)
 		if p.expr[0] in self.reserved_keywords:
 			self.handle_error('reserved_keyword_error', p.expr[0], p.lineno)
 			return None
